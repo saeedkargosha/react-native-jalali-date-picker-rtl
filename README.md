@@ -12,7 +12,7 @@ My goal of push this package on github is to use it for personal projects. You c
 ## How to use 
 Run : 
     
-    $ npm i --save react-native-jalali-date-picker
+    $ npm i --save react-native-jalali-date-picker-rtl
     
 Add the following code to the `App.js` of the project :
 
@@ -38,15 +38,15 @@ Add the following code to the `App.js` of the project :
     
 Add the following code in your component :
 
-    import PersianCalendarPicker from 'React-native-jalali-datepicker';
+    import { Component } from 'react';
+    import { View, Text, Dimensions } from 'react-native';
+    import PersianCalendarPicker from 'react-native-jalali-date-picker-rtl/PersianCalendarPicker';
         class FreeTime extends Component { 
             constructor(props) {
                 super(props);
 
                 this.state = {
-                    date: new Date(),
-                    prevDay: (d => new Date(d.setDate(d.getDate() - 1)))(new Date()),
-                    prevDays: (d => new Date(d.setDate(d.getDate() - 1)).toJSON().split('T')[0].replace(/-/g, ''))(new Date()),
+                    date: new Date()
                 };
                 this.onDateChange = this.onDateChange.bind(this);
             }
@@ -63,8 +63,6 @@ Add the following code in your component :
                             selectedDate={date}
                             onDateChange={this.onDateChange}
                             screenWidth={Dimensions.get('window').width}
-                            minDate={prevDay}
-                            prevDays={prevDays}
                         />
                     <Text style={styles.selectedDate}> Date: { this.state.date.toString() } </Text>
                 </View>
