@@ -1,4 +1,4 @@
-# React-native-jalali-datepicker
+# react-native-jalali-date-picker-rtl
 A simple and clean jalali datepicker for ReactNative.
 
 My goal of push this package on github is to use it for personal projects. You can refer to the below link and use the full version of this package : [https://github.com/rghorbani/react-native-general-calendars]: React-Native-General-calendars
@@ -17,9 +17,9 @@ Run :
 
 Add the following code in your component :
 
-		import React, { Component } from 'react';
-		import { View, Text, Dimensions } from 'react-native';
-		import PersianCalendarPicker from 'react-native-jalali-date-picker-rtl';
+	import React, { Component } from 'react';
+	import { View, Text, Dimensions } from 'react-native';
+	import PersianCalendarPicker from 'react-native-jalali-date-picker-rtl';
 
         class FreeTime extends Component { 
             constructor(props) {
@@ -50,5 +50,5 @@ Add the following code in your component :
             }
         }
 
-new props added in version:
+new prop in version:
 	reverse: true|false
