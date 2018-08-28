@@ -16,9 +16,10 @@ Run :
     
 
 Add the following code in your component :
-    import React, { Component } from 'react';
-    import { View, Text, Dimensions } from 'react-native';
-    import PersianCalendarPicker from 'react-native-jalali-date-picker-rtl';
+
+		import React, { Component } from 'react';
+		import { View, Text, Dimensions } from 'react-native';
+		import PersianCalendarPicker from 'react-native-jalali-date-picker-rtl';
 
         class FreeTime extends Component { 
             constructor(props) {
@@ -50,4 +51,4 @@ Add the following code in your component :
         }
 
 new props added in version:
-reverse: true|false
+	reverse: true|false
