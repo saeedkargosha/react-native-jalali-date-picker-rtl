@@ -12,7 +12,9 @@ My goal of push this package on github is to use it for personal projects. You c
 ## How to use 
 Run : 
     
-    $ npm i --save react-native-jalali-date-picker-rtl
+    `$ npm i --save react-native-jalali-date-picker-rtl`
+    or
+    `$ yarn add react-native-jalali-date-picker-rtl`
     
 
 Add the following code in your component :
@@ -50,5 +52,5 @@ Add the following code in your component :
             }
         }
 
-new prop in version:
-	reverse: true|false
+#### new prop in version
+	`reverse: true|false`
