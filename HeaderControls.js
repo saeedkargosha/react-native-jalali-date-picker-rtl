@@ -59,7 +59,7 @@ class HeaderControls extends React.Component {
   getNext() {
     let next = this.state.selectedMonth + 1;
     if (next > 11) {
-      this.setState( { selectedMonth: 0 },
+      this.setState({ selectedMonth: 0 },
         // Run this function as a callback to ensure state is set first
         () => {
           this.props.getNextYear();
@@ -78,7 +78,7 @@ class HeaderControls extends React.Component {
   getPrevious() {
     let prev = this.state.selectedMonth - 1;
     if (prev < 0) {
-      this.setState({ selectedMonth: 11},
+      this.setState({ selectedMonth: 11 },
         // Run this function as a callback to ensure state is set first
         () => {
           this.props.getPrevYear();
@@ -106,52 +106,52 @@ class HeaderControls extends React.Component {
   }
 
   nextMonthDisabled() {
-    return ( this.props.maxDate &&
-             ( this.props.year > this.props.maxDate.getFullYear() ||
-               ( this.props.year == this.props.maxDate.getFullYear() && this.state.selectedMonth >= this.props.maxDate.getMonth() )
-             )
-           );
+    return (this.props.maxDate &&
+      (this.props.year > this.props.maxDate.getFullYear() ||
+        (this.props.year == this.props.maxDate.getFullYear() && this.state.selectedMonth >= this.props.maxDate.getMonth())
+      )
+    );
   }
 
   render() {
     let textStyle = this.props.textStyle;
 
     let previous;
-    if ( this.previousMonthDisabled() ) {
+    if (this.previousMonthDisabled()) {
       previous = (
-        <Text style={[styles.prev, textStyle, styles.disabledTextColor]}>{this.props.previousTitle || 'ماه قبل'}</Text>
+        <Text style={[styles.prev, this.props.reverse && styles.prev_rtl, textStyle, styles.disabledTextColor]}>{this.props.previousTitle || 'ماه قبل'}</Text>
       );
     }
     else {
       previous = (
         <TouchableOpacity onPress={this.getPrevious}>
-          <Text style={[styles.prev, textStyle]}>{this.props.previousTitle || 'ماه قبل'}</Text>
+          <Text style={[styles.prev, this.props.reverse && styles.prev_rtl, textStyle]}>{this.props.previousTitle || 'ماه قبل'}</Text>
         </TouchableOpacity>
       );
     }
 
     let next;
-    if ( this.nextMonthDisabled() ) {
+    if (this.nextMonthDisabled()) {
       next = (
-        <Text style={[styles.next, textStyle, styles.disabledTextColor]}>{this.props.nextTitle || 'ماه بعد'}</Text>
+        <Text style={[styles.next, this.props.reverse && styles.next_rtl, textStyle, styles.disabledTextColor]}>{this.props.nextTitle || 'ماه بعد'}</Text>
       );
     }
     else {
       next = (
         <TouchableOpacity onPress={this.getNext}>
-          <Text style={[styles.next, textStyle]}>{this.props.nextTitle || 'ماه بعد'}</Text>
+          <Text style={[styles.next, this.props.reverse && styles.next_rtl, textStyle]}>{this.props.nextTitle || 'ماه بعد'}</Text>
         </TouchableOpacity>
       );
     }
 
     return (
-      <View style={styles.headerWrapper}>
+      <View style={[styles.headerWrapper, this.props.reverse && styles.rtl]}>
         <View style={styles.monthSelector}>
           {next}
         </View>
         <View>
           <Text style={[styles.monthLabel, textStyle]}>
-            { (this.props.months || MONTHS)[this.state.selectedMonth] } { this.props.year.toString().PersianNumber() }
+            {(this.props.months || MONTHS)[this.state.selectedMonth]} {this.props.year.toString().PersianNumber()}
           </Text>
         </View>
         <View style={styles.monthSelector}>

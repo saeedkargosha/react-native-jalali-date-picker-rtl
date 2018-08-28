@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
 
   dayLabelsWrapper: {
-    flexDirection: 'row-reverse',
+    flexDirection: 'row',
     marginBottom: normalize(10),
     borderBottomWidth: 1,
     borderTopWidth: 1,
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   },
   headerWrapper: {
     alignItems: 'center',
-    flexDirection: 'row-reverse',
+    flexDirection: 'row',
     alignSelf: 'center',
     marginBottom: normalize(10),
     padding: normalize(5),
@@ -99,14 +99,20 @@ const styles = StyleSheet.create({
     width: normalize(80),
   },
   prev: {
+    textAlign: 'right',
+    fontSize: normalize(14),
+    fontFamily: 'IS_Light',
+  },
+  prev_rtl: {
+    textAlign: 'left',
+  },
+  next: {
     textAlign: 'left',
     fontSize: normalize(14),
     fontFamily: 'IS_Light',
   },
-  next: {
+  next_rtl: {
     textAlign: 'right',
-    fontSize: normalize(14),
-    fontFamily: 'IS_Light',
   },
   yearLabel: {
     fontSize: normalize(14),
@@ -119,11 +125,14 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   weekRow: {
-    flexDirection: 'row-reverse',
+    flexDirection: 'row',
   },
   disabledTextColor: {
     color: '#BBBBBB',
   },
+  rtl: {
+    flexDirection: 'row-reverse',
+  }
 });
 
 module.exports = styles;

@@ -36,6 +36,7 @@ class PersianCalendarPicker extends React.Component {
     scaleFactor: PropTypes.number,
     textStyle: Text.propTypes.style,
     prevDays: PropTypes.string,
+    rtl: PropTypes.bool
 
   };
 
@@ -74,20 +75,20 @@ class PersianCalendarPicker extends React.Component {
   }
 
   onDayChange(day) {
-    
-    this.setState({day: day.day}, () => { this.onDateChange(); });
+
+    this.setState({ day: day.day }, () => { this.onDateChange(); });
   }
 
   onMonthChange(month) {
-    this.setState({month: month}, () => { this.onDateChange(); });
+    this.setState({ month: month }, () => { this.onDateChange(); });
   }
 
-  getNextYear(){
-    this.setState({year: this.state.year + 1}, () => { this.onDateChange(); });
+  getNextYear() {
+    this.setState({ year: this.state.year + 1 }, () => { this.onDateChange(); });
   }
 
   getPrevYear() {
-    this.setState({year: this.state.year - 1}, () => { this.onDateChange(); });
+    this.setState({ year: this.state.year - 1 }, () => { this.onDateChange(); });
   }
 
   onDateChange() {
@@ -100,7 +101,7 @@ class PersianCalendarPicker extends React.Component {
     let date2 = new Date(date.year(), date.month(), date.date());
     console.log(this.props);
     console.log(this.state);
-    this.setState({date: date});
+    this.setState({ date: date });
     this.props.onDateChange(date2);
   }
 
@@ -119,11 +120,13 @@ class PersianCalendarPicker extends React.Component {
           previousTitle={this.props.previousTitle}
           nextTitle={this.props.nextTitle}
           textStyle={this.props.textStyle}
+          reverse={this.props.reverse}
         />
         <WeekDaysLabels
           screenWidth={this.props.screenWidth}
           weekdays={this.props.weekdays}
           textStyle={this.props.textStyle}
+          reverse={this.props.reverse}
         />
         <Days
           maxDate={this.props.maxDate}
@@ -137,6 +140,7 @@ class PersianCalendarPicker extends React.Component {
           selectedDayColor={this.props.selectedDayColor}
           textStyle={this.props.textStyle}
           prevDays={this.props.prevDays}
+          reverse={this.props.reverse}
         />
       </View>
     );

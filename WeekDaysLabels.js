@@ -35,7 +35,7 @@ class WeekDaysLabels extends React.Component {
     let labels = (this.props.weekdays || WEEKDAYS).map((day, key) => { return <Text key={key} style={[styles.dayLabels, this.props.textStyle]}>{day}</Text>; });
     labels.reverse();
     return (
-      <View style={styles.dayLabelsWrapper}>
+      <View style={[styles.dayLabelsWrapper, this.props.rtl && styles.rtl]}>
         {labels}
       </View>
     );
