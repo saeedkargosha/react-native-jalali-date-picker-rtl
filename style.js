@@ -46,8 +46,7 @@ const styles = StyleSheet.create({
     fontSize: normalize(14),
     color: '#000',
     marginTop: normalize(6),
-    alignSelf: 'center',
-    fontFamily: 'IS'
+    alignSelf: 'center'
   },
 
   dayLabelsWrapper: {
@@ -68,7 +67,6 @@ const styles = StyleSheet.create({
     width: normalize(50),
     fontSize: normalize(10),
     color: '#000',
-    fontFamily: 'IS_Light',
     textAlign: 'center',
   },
   selectedDay: {
@@ -82,7 +80,6 @@ const styles = StyleSheet.create({
   monthLabel: {
     fontSize: normalize(16),
     color: '#000',
-    fontFamily: 'IS_Light',
     width: normalize(180),
     textAlign: 'center',
   },
@@ -101,15 +98,13 @@ const styles = StyleSheet.create({
   prev: {
     textAlign: 'right',
     fontSize: normalize(14),
-    fontFamily: 'IS_Light',
   },
   prev_rtl: {
     textAlign: 'left',
   },
   next: {
     textAlign: 'left',
-    fontSize: normalize(14),
-    fontFamily: 'IS_Light',
+    fontSize: normalize(14)
   },
   next_rtl: {
     textAlign: 'right',
@@ -118,7 +113,6 @@ const styles = StyleSheet.create({
     fontSize: normalize(14),
     fontWeight: 'bold',
     color: '#000',
-    fontFamily: 'IS_Light',
     textAlign: 'center',
   },
   weeks: {
