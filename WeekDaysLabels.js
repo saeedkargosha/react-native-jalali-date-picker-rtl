@@ -20,10 +20,6 @@ const {
 } = require('./util');
 
 class WeekDaysLabels extends React.Component {
-  static propTypes: {
-    screenWidth: PropTypes.number,
-    textStyle: Text.propTypes.style
-  };
 
   constructor(props) {
     super(props);
