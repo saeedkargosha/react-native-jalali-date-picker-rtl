@@ -20,10 +20,8 @@ const {
 } = require('./util');
 
 class WeekDaysLabels extends React.Component {
-
   constructor(props) {
     super(props);
-
     this.DAY_WIDTH = (this.props.screenWidth - 16) / 7;
   }
 
